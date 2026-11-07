@@ -23,6 +23,18 @@ skills/awesome-motion-graphics/
   extras/         intros, endings, assembling a full reel
 ```
 
+## Previews
+
+Each one is rendered with the inspiri.flow husky as the speaker (`preview-studio/`, `bash render-gif.sh <effect>`). Preview fidelity: the specs are approximated in CSS, and the data shown is made up.
+
+|   |   |   |   |
+|---|---|---|---|
+| <img src="previews/reel-wall.gif" width="180"><br>**reel-wall** | <img src="previews/glass-widgets.gif" width="180"><br>**glass-widgets** | <img src="previews/kallaway.gif" width="180"><br>**kallaway** | <img src="previews/orbit.gif" width="180"><br>**orbit** |
+| <img src="previews/billboard.gif" width="180"><br>**billboard** | <img src="previews/zoom-through.gif" width="180"><br>**zoom-through** | <img src="previews/text-path.gif" width="180"><br>**text-path** | <img src="previews/zoom-grid.gif" width="180"><br>**zoom-grid** |
+| <img src="previews/face-cam.gif" width="180"><br>**face-cam** | <img src="previews/text-3d.gif" width="180"><br>**text-3d** | <img src="previews/text-ring.gif" width="180"><br>**text-ring** | <img src="previews/tier-list.gif" width="180"><br>**tier-list** |
+| <img src="previews/glass-graph.gif" width="180"><br>**glass-graph** | <img src="previews/over-the-shoulder.gif" width="180"><br>**over-the-shoulder** | <img src="previews/text-behind.gif" width="180"><br>**text-behind** | <img src="previews/stage-light.gif" width="180"><br>**stage-light** |
+| <img src="previews/glass-panels.gif" width="180"><br>**glass-panels** | <img src="previews/reach-split.gif" width="180"><br>**reach-split** | <img src="previews/reel-orbit.gif" width="180"><br>**reel-orbit** | <img src="previews/pull-back.gif" width="180"><br>**pull-back** |
+
 ## Effects
 
 | Effect | What you see | Needs | Source |
@@ -59,3 +71,7 @@ skills/awesome-motion-graphics/
 1. Add a row to **Sources** with a short id.
 2. One file per effect in `effects/`, using the frontmatter in `SKILL.md` and `source: <id>`.
 3. Add it to the **Effects** table.
+
+## Credits
+
+- Preview music: "Sneaky Snitch" by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0.
