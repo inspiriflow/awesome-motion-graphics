@@ -82,6 +82,7 @@ Previews cover the frame-15 effects so far. Each one is rendered with the inspir
 | tape-label | Yellow tape with your line lands on your chest | head-track | vibha-51 |
 | select-resize | Selection box grabs your number, cursor drags it bigger | mask | vibha-51 |
 | wave-trim | Silence on your waveform trims away | mask | vibha-51 |
+| freeze-frame | Freeze on your gesture, you pop out as a white-outlined sticker with a name tag | mask, head-track | brody-01 |
 | check-pills | Grid-paper room, reel boards behind, cursor clicks pills | mask, reels | vibha-51 |
 
 ## Sources
@@ -90,6 +91,7 @@ Previews cover the frame-15 effects so far. Each one is rendered with the inspir
 |---|---|---|
 | frame-15 | [FRAME: 15 video edits you can make with Claude](https://promptible.notion.site/FRAME-15-video-edits-you-can-make-with-Claude-copy-paste-prompts-4056a397f23b81bcb2d2e937d918d84c) (Promptible) | 15 edits + 5 bonus, setup, chat intro. Recipes here are restructured specs; see the original for the full copy-paste prompts. |
 | vibha-51 | [claude-video-effects](https://github.com/Vibha-Ramprakash/claude-video-effects) by Vibha Ramprakash ([@vibha.in.progress](https://instagram.com/vibha.in.progress)), MIT | 51 effects as a runnable Python/ffmpeg renderer. 24 added here as specs; the other 27 match effects already listed (orbit, carousel-spin → reel-orbit; profile-wall → reel-wall; place-in-grid → zoom-grid; spotlight, led-sign, glitter-spotlight → stage-light; backdrop-word, huge-strike, crayon-write, red-collage, pastel-word → text-behind; split-headline → kallaway; broll-split → reach-split; reel-frame, timeline → pull-back; liquid-glass-graph → glass-graph; plus glass-widgets, tier-list, over-the-shoulder-zoom). |
+| brody-01 | [Claude Prompt Pack 01](https://instagram.com/brodyautomates) by @brodyautomates (PDF) | 6 prompts. 1 added (freeze-frame); the other 5 match existing recipes: over-the-shoulder, glass-graph, tier-list, text-behind, color-grade → grade (swipe). |
 
 ## Adding a source
 
