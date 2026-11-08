@@ -25,7 +25,7 @@ skills/awesome-motion-graphics/
 
 ## Previews
 
-Each one is rendered with the inspiri.flow husky as the speaker (`preview-studio/`, `bash render-gif.sh <effect>`). Preview fidelity: the specs are approximated in CSS, and the data shown is made up.
+Previews cover the frame-15 effects so far. Each one is rendered with the inspiri.flow husky as the speaker (`preview-studio/`, `bash render-gif.sh <effect>`). Preview fidelity: the specs are approximated in CSS, and the data shown is made up.
 
 |   |   |   |   |
 |---|---|---|---|
@@ -59,12 +59,37 @@ Each one is rendered with the inspiri.flow husky as the speaker (`preview-studio
 | reach-split | Reach chart on a chalk board above, your shot fades in below | – | frame-15 |
 | reel-orbit | Your reel covers orbit your head with real view counts | mask, head-track, reels | frame-15 |
 | pull-back | Your shot becomes the monitor of an editing suite with a real timeline | music | frame-15 |
+| pile-up | Reels or your headlines pile up behind your head, total pops in front | mask, reels | vibha-51 |
+| fan | Tiles, phones or covers fan out in an arc around you | mask, reels | vibha-51 |
+| locked-on | Brackets snap onto your face, camera follows you | head-track | vibha-51 |
+| punch-in | Fast punch on a word, slow cinematic push, or punch + headline | head-track | vibha-51 |
+| receipt | Your instructions print out of the wall like a receipt | mask | vibha-51 |
+| grade | Colour grade fades in, or a before/after slider reveals it | – | vibha-51 |
+| checklist | To-do card, Claude task list or iPhone toggles tick off as you talk | mask, head-track | vibha-51 |
+| comment-box | IG comments sheet types your word, posts it, you reply | mask | vibha-51 |
+| follow-tap | Follow button flips to Following | head-track | vibha-51 |
+| pause-point | Freeze frame with a hand-drawn arrow and label | head-track | vibha-51 |
+| uninstall | Uninstall bar fills while the frame glitches apart | – | vibha-51 |
+| shortcut-rain | Keycaps rain down behind you | mask | vibha-51 |
+| stamp | Red rubber stamp slams down, frame shakes | head-track | vibha-51 |
+| countdown-flip | 3, 2, 1 split-flap clock above your head | mask | vibha-51 |
+| rabbit-hole | Room tunnels into itself, spinning, you stay in front | mask | vibha-51 |
+| cover-star | You become a magazine cover | mask | vibha-51 |
+| scribble | Marker doodles draw themselves around you | head-track | vibha-51 |
+| dot-reveal | Your shot builds out of glowing dots | – | vibha-51 |
+| match-cut | News pages cut on one word locked behind your head | mask | vibha-51 |
+| messages | iMessage banners pop in and stack up | – | vibha-51 |
+| tape-label | Yellow tape with your line lands on your chest | head-track | vibha-51 |
+| select-resize | Selection box grabs your number, cursor drags it bigger | mask | vibha-51 |
+| wave-trim | Silence on your waveform trims away | mask | vibha-51 |
+| check-pills | Grid-paper room, reel boards behind, cursor clicks pills | mask, reels | vibha-51 |
 
 ## Sources
 
 | id | Source | Notes |
 |---|---|---|
 | frame-15 | [FRAME: 15 video edits you can make with Claude](https://promptible.notion.site/FRAME-15-video-edits-you-can-make-with-Claude-copy-paste-prompts-4056a397f23b81bcb2d2e937d918d84c) (Promptible) | 15 edits + 5 bonus, setup, chat intro. Recipes here are restructured specs; see the original for the full copy-paste prompts. |
+| vibha-51 | [claude-video-effects](https://github.com/Vibha-Ramprakash/claude-video-effects) by Vibha Ramprakash ([@vibha.in.progress](https://instagram.com/vibha.in.progress)), MIT | 51 effects as a runnable Python/ffmpeg renderer. 24 added here as specs; the other 27 match effects already listed (orbit, carousel-spin → reel-orbit; profile-wall → reel-wall; place-in-grid → zoom-grid; spotlight, led-sign, glitter-spotlight → stage-light; backdrop-word, huge-strike, crayon-write, red-collage, pastel-word → text-behind; split-headline → kallaway; broll-split → reach-split; reel-frame, timeline → pull-back; liquid-glass-graph → glass-graph; plus glass-widgets, tier-list, over-the-shoulder-zoom). |
 
 ## Adding a source
 
@@ -74,4 +99,5 @@ Each one is rendered with the inspiri.flow husky as the speaker (`preview-studio
 
 ## Credits
 
+- vibha-51 recipes are adapted from [claude-video-effects](https://github.com/Vibha-Ramprakash/claude-video-effects), © 2026 Vibha Ramprakash, MIT License.
 - Preview music: "Sneaky Snitch" by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0.

@@ -1,6 +1,6 @@
 ---
 name: awesome-motion-graphics
-description: A collected library of motion-graphics edits for talking-head vertical video (1080x1920), each a build spec Claude can render with Remotion. Use when the user asks for a named edit (reel wall, glass widgets, orbit, billboard, zoom through, text ring, tier list, glass graph, stage light...), says "/edit <name>", asks "what edits can you do", or wants a premium social-video effect on their own clip.
+description: A collected library of motion-graphics edits for talking-head vertical video (1080x1920), each a build spec Claude can render with Remotion. Use when the user asks for a named edit (reel wall, glass widgets, orbit, billboard, zoom through, text ring, tier list, glass graph, stage light, punch-in, checklist, comment box, stamp, cover star, match cut, messages, rabbit hole...), says "/edit <name>", asks "what edits can you do", or wants a premium social-video effect on their own clip.
 ---
 
 # Awesome Motion Graphics
@@ -11,7 +11,7 @@ A library of effect recipes gathered from many sources. Each recipe in `effects/
 
 1. **No name given?** List every file in `effects/` with its one-line `summary` from the frontmatter, grouped by `tags`. Stop.
 2. **First run in a project?** Do `setup/house-style.md`, then `setup/mask-and-head-track.md` if the effect's `needs` includes `mask` or `head-track`. Skip what already exists (`HOUSE_STYLE.md`, `public/mask/`, `public/head-track.json`).
-3. Read the matching `effects/<name>.md`. Fill every `[INPUT]` from the user's words. Ask for anything still missing, especially real numbers. Never invent stats, view counts or logos.
+3. Read the matching `effects/<name>.md`. Fill every `[INPUT]` from the user's words. Ask for anything still missing, especially real numbers. Never invent stats, view counts or logos. Timing given as "on the word X": transcribe the clip with word timestamps and use those.
 4. Build it as its own composition named after the effect, following HOUSE_STYLE.md.
 5. Render to `out/<name>.mp4`, report the path, and show 4 stills (start, two middle, end).
 

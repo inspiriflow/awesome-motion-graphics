@@ -27,3 +27,7 @@ All lighting in linear light. Warm white only.
 4. **Throughout**: push 1.0→1.04, soft highlights, fine grain on the darkened room.
 
 No outline, glow, neon.
+
+## Variants (source: vibha-51)
+- **led-sign**: instead of a projection, an LED dot-matrix sign (11-row font, orange `#FF9230` by default) types itself on left→right above the head, behind you. Dots flicker ±18%, unlit dots at 9%, with a strong bloom. The room drops ~84% outside a soft pool around you, push 1→1.08.
+- **glitter-spotlight**: golden rays burst from behind the head, a big gold word gets a shine sweep, with twinkling 4-point sparkles and a warm glow around you.
