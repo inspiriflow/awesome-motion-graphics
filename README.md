@@ -1,31 +1,40 @@
-# Awesome Motion Graphics
+<div align="center">
 
-A Claude Code skill that collects motion-graphics edits for vertical talking-head video from many sources. Each recipe is a build spec that Claude turns into a Remotion composition and renders to MP4 on your own clip.
+<img src="previews/orbit.gif" width="22%"> <img src="previews/text-behind.gif" width="22%"> <img src="previews/glass-widgets.gif" width="22%"> <img src="previews/billboard.gif" width="22%">
 
-## Install
+### Every motion-graphics edit worth stealing, in one Claude skill.
 
-```bash
-git clone <this-repo> ~/awesome-motion-graphics
-ln -s ~/awesome-motion-graphics/skills/awesome-motion-graphics ~/.claude/skills/awesome-motion-graphics
-```
+**awesome-motion-graphics** is a Claude skill that collects motion-graphics effects for vertical talking-head video from creators across the internet. It turns each one into a precise build spec that Claude renders on your own clip with Remotion.
 
-Then in Claude Code: *"use awesome-motion-graphics: orbit on ~/Movies/me.mov"*, or just *"what edits can you do?"*
+[![Claude Skill](https://img.shields.io/badge/Claude-Skill-D97757)](#-quick-start)
+[![Remotion](https://img.shields.io/badge/Remotion-4-0B84F3)](#-how-it-works)
+[![Effects](https://img.shields.io/badge/effects-45-F69963)](#-the-effects)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/inspiriflow/awesome-motion-graphics?style=social)](https://github.com/inspiriflow/awesome-motion-graphics)
 
-Requirements: Node.js, a vertical clip (ideally 1080x1920). Claude installs Remotion during setup.
+[Demo](#-demo) · [The effects](#-the-effects) · [How it works](#-how-it-works) · [Quick start](#-quick-start) · [Sources](#-sources)
 
-## Layout
+</div>
 
-```
-skills/awesome-motion-graphics/
-  SKILL.md        workflow, defaults, troubleshooting
-  setup/          house style + person mask / head track (run once)
-  effects/        one recipe per file, with frontmatter
-  extras/         intros, endings, assembling a full reel
-```
+---
 
-## Previews
+## 🎞️ What is awesome-motion-graphics
 
-Previews cover the frame-15 effects so far. Each one is rendered with the inspiri.flow husky as the speaker (`preview-studio/`, `bash render-gif.sh <effect>`). Preview fidelity: the specs are approximated in CSS, and the data shown is made up.
+The edits that make short-form videos look premium — text behind your head, glass cards that orbit you, a pull-back onto a city billboard — are now shared as copy-paste Claude prompts, PDFs and GitHub repos. They're scattered across a dozen places, they overlap, and each one assumes a different setup.
+
+This repo gathers them into one library. Every effect is a short spec with the same shape: what the viewer sees, what you fill in, the exact layout, and a frame-by-frame timing table. Name an effect, give Claude your clip, and it builds and renders it.
+
+## ✨ Why awesome-motion-graphics
+
+- **One library, many sources.** 45 effects from 3 sources so far, with duplicates merged. When two creators share the same idea, it's one spec with a `LOOK` option, not two.
+- **Same shape every time.** Inputs, build, timing. Claude doesn't have to guess how one creator's prompt differs from another's.
+- **Your face stays clear.** A shared house style keeps readable text inside the Instagram safe area and never puts a graphic over your face.
+- **Real numbers only.** Charts, counters and view counts come from you. The skill never invents stats or logos.
+- **Depth for free.** One-time setup makes a person mask and head track, so graphics can sit behind you, orbit around you, or follow your head.
+
+## 🎬 Demo
+
+> Each preview is rendered with the inspiri.flow husky as the speaker. The specs are approximated in CSS, and the data shown is made up. Previews cover the first 20 effects so far.
 
 |   |   |   |   |
 |---|---|---|---|
@@ -35,7 +44,7 @@ Previews cover the frame-15 effects so far. Each one is rendered with the inspir
 | <img src="previews/glass-graph.gif" width="180"><br>**glass-graph** | <img src="previews/over-the-shoulder.gif" width="180"><br>**over-the-shoulder** | <img src="previews/text-behind.gif" width="180"><br>**text-behind** | <img src="previews/stage-light.gif" width="180"><br>**stage-light** |
 | <img src="previews/glass-panels.gif" width="180"><br>**glass-panels** | <img src="previews/reach-split.gif" width="180"><br>**reach-split** | <img src="previews/reel-orbit.gif" width="180"><br>**reel-orbit** | <img src="previews/pull-back.gif" width="180"><br>**pull-back** |
 
-## Effects
+## 🧩 The effects
 
 | Effect | What you see | Needs | Source |
 |---|---|---|---|
@@ -82,10 +91,76 @@ Previews cover the frame-15 effects so far. Each one is rendered with the inspir
 | tape-label | Yellow tape with your line lands on your chest | head-track | vibha-51 |
 | select-resize | Selection box grabs your number, cursor drags it bigger | mask | vibha-51 |
 | wave-trim | Silence on your waveform trims away | mask | vibha-51 |
-| freeze-frame | Freeze on your gesture, you pop out as a white-outlined sticker with a name tag | mask, head-track | brody-01 |
 | check-pills | Grid-paper room, reel boards behind, cursor clicks pills | mask, reels | vibha-51 |
+| freeze-frame | Freeze on your gesture, you pop out as a white-outlined sticker with a name tag | mask, head-track | brody-01 |
 
-## Sources
+**Needs:** `mask` = a person cut-out, `head-track` = your head position per frame, `reels` = screenshots of your own reels, `music` = a track. Setup makes the first two once per clip.
+
+## 🧭 How it works
+
+```
+Your clip + an effect name
+        │
+        ▼
+1. No effect named?    → lists every effect, grouped by tag
+2. First run           → Remotion project + house style (once per project)
+3. Mask + head track   → only if the effect needs them (once per clip)
+4. Fill the inputs     → asks for anything missing, real numbers only
+5. Build               → one Remotion composition per effect
+6. Render              → out/<effect>.mp4, plus 4 stills to check
+```
+
+Each effect is a spec like this:
+
+```
+---
+name: text-behind
+summary: A huge word rises from behind your head, holds, then drops away
+needs: [mask, behind-me]
+duration: 3s
+---
+## Inputs      [WORD]
+## Build       Heavy condensed bold, ~330 px, behind the head, inside x 120–960
+## Timing      0–10 rise + blur→sharp · 10–75 hold, slow lift · 75–90 drop and fade
+```
+
+## 🚀 Quick start
+
+**Claude.ai / Claude desktop app**
+
+1. Download [`awesome-motion-graphics.skill`](https://github.com/inspiriflow/awesome-motion-graphics/releases/latest) from Releases.
+2. Upload it in Claude's Skills settings.
+3. In a new chat, ask: *"What edits can you do?"* or *"Add text-behind to my clip with the word CLAUDE."*
+
+**Claude Code**
+
+```bash
+git clone https://github.com/inspiriflow/awesome-motion-graphics.git
+cp -r awesome-motion-graphics/skills/awesome-motion-graphics ~/.claude/skills/
+```
+
+You need Node.js and a vertical clip, ideally 1080×1920. Claude installs Remotion during setup.
+
+## 🏗️ Project structure
+
+```
+skills/awesome-motion-graphics/
+├── SKILL.md          # The skill: workflow, defaults, troubleshooting
+├── setup/            # House style + person mask / head track (run once)
+├── effects/          # One spec per effect, with frontmatter
+└── extras/           # Chat-style intros/endings, assembling a full reel
+previews/             # Demo GIFs
+preview-studio/       # Remotion project that renders the GIFs
+```
+
+Render a preview yourself:
+
+```bash
+cd preview-studio && npm install
+bash render-gif.sh orbit     # → previews/orbit.gif
+```
+
+## 📚 Sources
 
 | id | Source | Notes |
 |---|---|---|
@@ -93,13 +168,18 @@ Previews cover the frame-15 effects so far. Each one is rendered with the inspir
 | vibha-51 | [claude-video-effects](https://github.com/Vibha-Ramprakash/claude-video-effects) by Vibha Ramprakash ([@vibha.in.progress](https://instagram.com/vibha.in.progress)), MIT | 51 effects as a runnable Python/ffmpeg renderer. 24 added here as specs; the other 27 match effects already listed (orbit, carousel-spin → reel-orbit; profile-wall → reel-wall; place-in-grid → zoom-grid; spotlight, led-sign, glitter-spotlight → stage-light; backdrop-word, huge-strike, crayon-write, red-collage, pastel-word → text-behind; split-headline → kallaway; broll-split → reach-split; reel-frame, timeline → pull-back; liquid-glass-graph → glass-graph; plus glass-widgets, tier-list, over-the-shoulder-zoom). |
 | brody-01 | [Claude Prompt Pack 01](https://instagram.com/brodyautomates) by @brodyautomates (PDF) | 6 prompts. 1 added (freeze-frame); the other 5 match existing recipes: over-the-shoulder, glass-graph, tier-list, text-behind, color-grade → grade (swipe). |
 
-## Adding a source
+**Adding a source:** add a row here with a short id, write one file per effect in `effects/` with `source: <id>` in its frontmatter, and add it to the effects table. Skip anything that does the same thing as an effect already listed.
 
-1. Add a row to **Sources** with a short id.
-2. One file per effect in `effects/`, using the frontmatter in `SKILL.md` and `source: <id>`.
-3. Add it to the **Effects** table.
+## 🙏 Credits
 
-## Credits
-
+- Effects come from the sources above. Recipes are rewritten as specs; follow the links for the originals.
 - vibha-51 recipes are adapted from [claude-video-effects](https://github.com/Vibha-Ramprakash/claude-video-effects), © 2026 Vibha Ramprakash, MIT License.
 - Preview music: "Sneaky Snitch" by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0.
+
+## 🤝 Contributing
+
+Issues and pull requests are welcome, especially new sources, new effects, and preview GIFs for the effects that don't have one yet.
+
+## ⚖️ License
+
+[MIT](LICENSE) © Alex Lou. The inspiri.flow logo and husky mascot are not covered by the licence.

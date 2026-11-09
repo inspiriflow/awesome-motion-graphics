@@ -1,2 +1,7 @@
 node_modules/
 out/
+
+# Built per release by .github/workflows/release.yml
+*.skill
+
+.DS_Store

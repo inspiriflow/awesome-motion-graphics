@@ -1,0 +1,17 @@
+name: Release skill
+on:
+  push:
+    tags: ["v*"]
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Package skill
+        run: cd skills && zip -r ../awesome-motion-graphics.skill awesome-motion-graphics -x "*.DS_Store"
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: awesome-motion-graphics.skill
+          generate_release_notes: true
